@@ -1,0 +1,56 @@
+{
+    "data_path": "generating_final_data.csv",
+    "required_columns": [
+        "yearmonth",
+        "banner",
+        "category",
+        "brand",
+        "segment",
+        "pri_sales_tons",
+        "promo_in_month",
+        "media_in_month",
+        "outlier_corrected_data",
+        "Insample Forecast",
+        "Actual Sales(Corrected)",
+        "no_of_working_days",
+        "packgroup_tdp",
+        "visibility",
+        "Error_reg"
+    ],
+    "grouping_columns": [
+        "banner",
+        "category",
+        "brand",
+        "segment"
+    ],
+    "causal_features": [
+        "promo_in_month",
+        "media_in_month",
+        "packgroup_tdp",
+        "visibility",
+        "no_of_working_days",
+        "promo_effect_after_1_month",
+        "promo_effect_after_2_month",
+        "promo_effect_after_3_month",
+        "monthly_seasonality",
+        "quarterly_seasonality"
+    ],
+    "models": [
+        "CatBoost"
+    ],
+    "target_column": "outlier_corrected_data",
+    "scale_features": true,
+    "fix_ols_violations": true,
+    "training_data_percent": 0.8,
+    "test_start_date": "202311",
+    "monthly_seasonality": 0,
+    "quarterly_seasonality": 0,
+    "filter_granularity": [
+        "AEON",
+        "ORAL",
+        "P/S",
+        "TOOTHBRUSH"
+    ],
+    "simulated_causal_factors": [],
+    "change_percent": {}
+}
